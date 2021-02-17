@@ -13,7 +13,7 @@
 	<groupId>io.opentelemetry.example</groupId>
 	<artifactId>boot-opentelemetry-tempo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>boot-opentelemetry-tempo</name>
 	<description>Project demonstrating OpenTelemetry Instrumentation</description>
 	<packaging>pom</packaging>
@@ -67,11 +67,11 @@
 							<goal>stop</goal>
 						</goals>
 					</execution>
-				</executions>				
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<modules>
 		<module>boot-otel-tempo-docker</module>
 		<module>boot-otel-tempo-api</module>

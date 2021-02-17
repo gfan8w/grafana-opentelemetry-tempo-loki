@@ -44,7 +44,7 @@ And then either `docker compose` or `docker stack`
 
 
 ````bash
-docker-compose up
+docker-compose up -d
 ````
 
 ## Docker Stack
