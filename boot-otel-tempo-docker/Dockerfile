@@ -22,7 +22,7 @@ RUN apk add --no-cache openjdk8="$JAVA_ALPINE_VERSION"
 RUN mkdir -p ${APP_HOME}
 
 COPY ./scripts/start-app.sh ${APP_HOME}/
-COPY ./agent/${OTEL_AGENT_JAR_FILE} ${APP_HOME}/
+COPY ./agent/${OTEL_JAR_FILE} ${APP_HOME}/
 
 #USER root
 #RUN chown -R 1001:1001 ${APP_HOME}
