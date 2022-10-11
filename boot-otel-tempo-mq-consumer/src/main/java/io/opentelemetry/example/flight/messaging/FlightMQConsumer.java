@@ -28,10 +28,10 @@ public class FlightMQConsumer {
 	@WithSpan
 	public void consumeMessage(String flightMessage) {
 		try {
-			LOGGER.trace("Message received: {} ", flightMessage);
+			LOGGER.info("Message received: {} ", flightMessage);
 			Flight flight = create(flightMessage);
 			flightService.process(flight);
-			LOGGER.debug("Message processed successfully");
+			LOGGER.error("Message processed successfully");
 		} catch (Exception e) {
 			LOGGER.error("Unnable to process the Message", e);
 		}

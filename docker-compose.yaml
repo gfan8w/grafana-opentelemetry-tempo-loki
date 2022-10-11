@@ -186,3 +186,10 @@ services:
       - prometheus
       - tempo-query
       - loki
+
+  # Our load generator
+  load-generator:
+    image: curlimages/curl:latest
+    volumes:
+      - ./etc/load-generator.sh:/tmp/load-generator.sh
+    command: /bin/sh -c "/tmp/load-generator.sh"

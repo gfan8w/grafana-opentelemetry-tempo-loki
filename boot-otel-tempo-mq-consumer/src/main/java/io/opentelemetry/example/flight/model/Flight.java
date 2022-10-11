@@ -7,7 +7,7 @@ public class Flight {
 	private String origin;
 	private String destination;
 	private String airline;
-	
+
 	private Date departureTime;
 
 	public String getOrigin() {
@@ -44,7 +44,7 @@ public class Flight {
 
 	@Override
 	public String toString() {
-		return "Flight [origin=" + origin + ", destination=" + destination + ", airline=" + airline + ", departureTime="
-				+ departureTime + "]";
-	}	
+		return "Flight (origin=" + origin + ", destination=" + destination + ", airline=" + airline + ", departureTime="
+				+ departureTime + ")";
+	}
 }

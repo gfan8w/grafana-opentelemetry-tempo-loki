@@ -2,6 +2,7 @@ package io.opentelemetry.example.flight.service;
 
 import java.time.Duration;
 
+import io.opentelemetry.api.trace.Span;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -24,10 +25,17 @@ public class FlightService {
 	@WithSpan
 	public void process(Flight flight) {
 		LOGGER.info("Processing : {}", flight);
-		valExpire("valExpireKey");		
+		Span span = Span.current();
+		span.setAttribute("attribute.process", "I would like to write redis");
+
+		valExpire("valExpireKey");
 	}
 
+	@WithSpan
 	private void valExpire(String key) {
+		LOGGER.info("Redis set key : {}", key);
+		Span span = Span.current();
+		span.setAttribute("attribute.key", key);
 		stringRedisTemplate.opsForValue().set(key, "SomeValue", Duration.ofSeconds(1));
 	}
 }
